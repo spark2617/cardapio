@@ -1,0 +1,38 @@
+# Diretórios do Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Arquivos e configurações locais
+.env
+*.env
+instance/
+config.py  # Se suas configurações locais sensíveis estiverem neste arquivo
+
+# Arquivos do banco de dados local
+*.sqlite3
+*.db
+
+# Diretórios criados automaticamente pelo Flask ou outras bibliotecas
+migrations/
+
+# Bibliotecas instaladas
+venv/
+.env/
+.venv/
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.pid
+*.swp
+
+# Arquivos de IDEs/editores
+.vscode/
+.idea/
+*.iml
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
