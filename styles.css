@@ -5,10 +5,60 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --primary-color: #28a745;
+            --secondary-color: #6c757d;
+            --header-bg: #6c757d;
+            --header-text: white;
+            --card-bg: white;
         }
+        
+        [data-theme="dark-yellow"] {
+            --bg-color: #222;
+            --text-color: #ffcc00;
+            --primary-color: #ffcc00;
+            --secondary-color: #444;
+            --header-bg: #333;
+            --header-text: #ffcc00;
+            --card-bg: #333;
+        }
+        
+        [data-theme="dark-red"] {
+            --bg-color: #222;
+            --text-color: #ff5555;
+            --primary-color: #ff5555;
+            --secondary-color: #444;
+            --header-bg: #333;
+            --header-text: #ff5555;
+            --card-bg: #333;
+        }
+        
+        [data-theme="dark-gray"] {
+            --bg-color: #222;
+            --text-color: #ccc;
+            --primary-color: #888;
+            --secondary-color: #444;
+            --header-bg: #333;
+            --header-text: #ccc;
+            --card-bg: #333;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+        }
+        
+        .categories {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+        }
+        
 
         /* Header/Perfil Container */
         .perfil-container {

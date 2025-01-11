@@ -1,0 +1,3 @@
+- integrar api de geolocalização
+- consertar bug do modal
+- colocar produto de exemplo para amostra

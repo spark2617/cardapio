@@ -1,4 +1,320 @@
 let pedido = [];
+
+const dataexemplo = [
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 1,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 1",
+            "id": 1,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 1"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 2,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 1",
+            "id": 2,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 2"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 3,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 1",
+            "id": 3,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 3"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 4,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 2",
+            "id": 4,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 4"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 5,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 2",
+            "id": 5,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 5"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 6,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 2",
+            "id": 6,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 6"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 9,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 1",
+            "id": 8,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 8"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 10,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 1",
+            "id": 9,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 9"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 11,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 1",
+            "id": 10,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 10"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 12,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 2",
+            "id": 11,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 11"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 13,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 2",
+            "id": 12,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 12"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 14,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 2",
+            "id": 13,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 13"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 15,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 2",
+            "id": 14,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 14"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 16,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 2",
+            "id": 15,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 15"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 17,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 2",
+            "id": 16,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 16"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 18,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 1",
+            "id": 17,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 17"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 19,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 1",
+            "id": 18,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 18"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 20,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 3",
+            "id": 19,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 19"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 21,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 3",
+            "id": 20,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 20"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 22,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 3",
+            "id": 21,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 21"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 23,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 3",
+            "id": 22,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 22"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 24,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 3",
+            "id": 23,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 23"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 25,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 3",
+            "id": 24,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 24"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 26,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 3",
+            "id": 25,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 25"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 27,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 3",
+            "id": 26,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 26"
+        }
+    },
+    {
+        "descricao": "Exemplo de descricao para prato",
+        "empresa_id": 1,
+        "id": 28,
+        "preco": 50.0,
+        "produto": {
+            "categoria": "categoria 3",
+            "id": 27,
+            "link_imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8w3aBLHYjM3DAt-UaVQjDR4Mk76UPGcKDbQ&s",
+            "nome": "prato basico 27"
+        }
+    }
+]
+
 function criarItemPedido(item) {
     const itemDiv = document.createElement('div');
     itemDiv.className = 'pedido-item d-flex justify-content-between align-items-center mb-2';
@@ -61,14 +377,14 @@ function nomeEmpresa() {
 // Carrega os produtos
 async function fetchProdutos() {
     try {
-        const response = await fetch(`http://127.0.0.1:5000/precos/empresa/${nomeEmpresa()}`);
-        const produtos = await response.json();
+        // const response = await fetch(`http://127.0.0.1:5000/precos/empresa/${nomeEmpresa()}`);
+        // const produtos = await response.json();
 
         const container = document.getElementById('produtos-container');
         container.innerHTML = '';
 
         const produtosPorCategoria = {};
-        produtos.forEach(produto => {
+        dataexemplo.forEach(produto => {
             const categoria = produto.produto.categoria;
             if (!produtosPorCategoria[categoria]) produtosPorCategoria[categoria] = [];
             produtosPorCategoria[categoria].push(produto);
@@ -102,7 +418,7 @@ async function fetchProdutos() {
             const produtosCategoria = produtosPorCategoria[categoria].sort((a, b) => a.produto.nome.localeCompare(b.produto.nome));
             produtosCategoria.forEach(produto => {
                 const card = document.createElement('div');
-                card.classList.add('card', 'mb-3');
+                card.classList.add('card', 'mb-3', 'position-relative');
                 card.setAttribute('data-id', produto.id);
 
                 card.innerHTML = `
@@ -118,7 +434,11 @@ async function fetchProdutos() {
                                 <button onclick="alterarQuantidade(${produto.id}, 1)">+</button>
                             </div>
                         </div>
+                        <textarea id="mensagem-${produto.id}" class="form-control mt-2" placeholder="Mensagem para o prato..." style="display: none;"></textarea>
                     </div>
+                    <button class="btn btn-icon position-absolute top-0 end-0 m-2" onclick="adicionarMensagem(${produto.id})">
+                        <i class="fas fa-comment"></i>
+                    </button>
                 `;
                 categoriaContainer.appendChild(card);
             });
@@ -129,6 +449,31 @@ async function fetchProdutos() {
         console.error('Erro ao carregar os produtos:', error);
     }
 }
+
+// Função para exibir o textarea para mensagem
+function adicionarMensagem(produtoId) {
+    const mensagemTextarea = document.getElementById(`mensagem-${produtoId}`);
+    if (mensagemTextarea.style.display === 'none') {
+        mensagemTextarea.style.display = 'block';
+    } else {
+        mensagemTextarea.style.display = 'none';
+    }
+}
+
+
+
+// function trocarTema(tema) {
+//     document.documentElement.setAttribute('data-theme', tema);
+// }
+
+// // Adicionar evento ao botão para alternar entre os temas
+// document.getElementById('botao-temas').addEventListener('click', () => {
+//     const temas = ['dark-yellow', 'dark-red', 'dark-gray'];
+//     const temaAtual = document.documentElement.getAttribute('data-theme');
+//     const proximoTema = temas[(temas.indexOf(temaAtual) + 1) % temas.length];
+//     trocarTema(proximoTema);
+// });
+
 
 // Configura a navegação de categorias
 function configurarScrollCategorias(categorias) {
@@ -206,7 +551,7 @@ function finalizarPedido(event) {
     const nomeCliente = document.getElementById('nomeCliente').value.trim();
     const endereco = document.getElementById('endereco').value.trim();
     let telefone = document.getElementById('telefone').value.trim();
-    
+
     telefone = telefone.replace(/\D/g, '');
 
     const metodoPagamento = document.getElementById('metodoPagamento').value;
@@ -256,34 +601,34 @@ function finalizarPedido(event) {
         },
         body: JSON.stringify(dadosPedido)
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Pedido finalizado com sucesso', data);
+        .then(response => response.json())
+        .then(data => {
+            console.log('Pedido finalizado com sucesso', data);
 
-        // Fecha o modal de pedido
-        const modalPedido = new bootstrap.Modal(document.getElementById('modalDePedidoLabel'));
-        modalPedido.hide();
+            // Fecha o modal de pedido
+            const modalPedido = new bootstrap.Modal(document.getElementById('modalDePedidoLabel'));
+            modalPedido.hide();
 
-        // Espera um momento para garantir que o modal de pedido foi fechado antes de abrir o de sucesso
-        const modalSucesso = new bootstrap.Modal(document.getElementById('modalSucesso'));
-        modalSucesso.show();
+            // Espera um momento para garantir que o modal de pedido foi fechado antes de abrir o de sucesso
+            const modalSucesso = new bootstrap.Modal(document.getElementById('modalSucesso'));
+            modalSucesso.show();
 
-        // Limpar os campos após a finalização
-        document.getElementById('nomeCliente').value = '';
-        document.getElementById('endereco').value = '';
-        document.getElementById('telefone').value = '';
+            // Limpar os campos após a finalização
+            document.getElementById('nomeCliente').value = '';
+            document.getElementById('endereco').value = '';
+            document.getElementById('telefone').value = '';
 
-        // Limpar as quantidades no DOM
-        const quantidadeSpans = document.querySelectorAll('[id^="quantidade-"]');
-        quantidadeSpans.forEach(span => span.textContent = '0');
+            // Limpar as quantidades no DOM
+            const quantidadeSpans = document.querySelectorAll('[id^="quantidade-"]');
+            quantidadeSpans.forEach(span => span.textContent = '0');
 
-        pedido = []; // Limpa o array de itens do pedido
-        atualizarFooter(); // Atualiza o rodapé após o pedido ser limpo
-    })
-    .catch(error => {
-        console.error('Erro ao finalizar o pedido:', error);
-        showError('itens-pedido', "Houve um erro ao finalizar o pedido. Tente novamente!");
-    });
+            pedido = []; // Limpa o array de itens do pedido
+            atualizarFooter(); // Atualiza o rodapé após o pedido ser limpo
+        })
+        .catch(error => {
+            console.error('Erro ao finalizar o pedido:', error);
+            showError('itens-pedido', "Houve um erro ao finalizar o pedido. Tente novamente!");
+        });
 }
 
 
